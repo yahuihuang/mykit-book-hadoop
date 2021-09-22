@@ -1,5 +1,3 @@
-package com.tssco.com.hadoop;
-
 import org.apache.hadoop.fs.FsUrlStreamHandlerFactory;
 import org.apache.hadoop.io.IOUtils;
 import java.io.IOException;

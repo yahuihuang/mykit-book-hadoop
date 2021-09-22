@@ -1,3 +1,5 @@
+package com.tssco.com.hadoop.ch07;
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.BlockLocation;
 import org.apache.hadoop.fs.FileStatus;
