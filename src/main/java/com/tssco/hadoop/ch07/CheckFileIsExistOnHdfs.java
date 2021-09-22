@@ -1,3 +1,5 @@
+package com.tssco.hadoop.ch07;
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;

@@ -1,17 +1,20 @@
-import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.FileSystem;
-import org.apache.hadoop.fs.Path;
+package com.tssco.hadoop.ch07;
+
+import org.apache.hadoop.fs.FsUrlStreamHandlerFactory;
 import org.apache.hadoop.io.IOUtils;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 
-public class VisitHdfsByFileSystem {
+public class VisitHdfsByUrl {
+    static {
+        URL.setURLStreamHandlerFactory(new FsUrlStreamHandlerFactory());
+    }
+
     public static void main(String[] args) throws IOException {
-        Configuration conf = new Configuration();
-        FileSystem fs = FileSystem.get(conf);
         InputStream in = null;
         try {
-            in = fs.open(new Path((args[0])));
+            in = new URL(args[0]).openStream();
             IOUtils.copyBytes(in, System.out, 4096, false);
         } finally {
             IOUtils.closeStream(in);
