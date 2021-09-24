@@ -24,6 +24,8 @@ public class WordCountRunner extends Configured implements Tool {
         job.setJarByClass(WordCountRunner.class);
         job.setMapperClass(WordCountMapper.class);
         job.setCombinerClass(WordCountCombiner.class);
+        job.setPartitionerClass(WordCountPartitioner.class);
+        job.setNumReduceTasks(3);
         job.setReducerClass(WordCountReducer.class);
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(LongWritable.class);
